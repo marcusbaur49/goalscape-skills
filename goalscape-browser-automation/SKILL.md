@@ -49,6 +49,35 @@ https://goalscape.app/#/projects/{projectId}?sid={selectedGoalId}&fid={focusGoal
 
 ## App Layout
 
+### Home Screen (Project List)
+The Home screen is the first thing you see after logging in, or when clicking the Goalscape logo / Home icon. It lists all your projects.
+
+**Top area:**
+- **"Create New Goalscape Project"** text field (default placeholder: "My new goal") — type a project name here
+- **"Create"** button — creates a new blank project with the typed name
+- **"Create with Goalscape AI"** button — creates a project using AI assistance
+- **Templates** button — opens the template gallery
+- **Import** button — imports an existing project
+- **Search** (magnifying glass icon, far right)
+
+**Project tabs:**
+- **"All my Goalscape projects"** tab — shows all projects
+- **"+"** button next to the tab — adds a new custom tab for organizing projects into groups
+
+**Project list columns:** Name, Created, Modified (sortable), Role
+
+**Hover actions on each project row:**
+When you hover over a project name, **5 icon buttons** appear to the right of the name (left to right):
+1. **Open in new tab** (external-link icon) — opens the project in a new browser tab
+2. **Duplicate** (copy icon) — creates a copy of the project
+3. **Add to custom tab** (arrow-into-box icon) — adds the project to a custom tab group
+4. **Archive** (download-box icon) — archives the project (moves it out of the active list)
+5. **Delete** (red trash icon) — permanently deletes the project
+
+> **Note:** These buttons are only visible on hover. They have no text labels, only icons with tooltips. The app uses custom `<tooltip>` elements (not standard HTML `title` attributes), so tooltips appear after a short hover delay.
+
+> **⚠ Automation tip:** To reveal these buttons, first hover over the project row and wait ~0.5s for the icons to appear, then hover over or click the desired icon. Use JavaScript to programmatically trigger `mouseenter` events if the icons are hard to target.
+
 ### Top Bar
 - **Goalscape logo**: navigates to Home
 - **Home icon** (house): opens Home dialog with project list
