@@ -310,3 +310,5 @@ Right-clicking a goal segment shows:
 13. **Always use `form_input` for renaming goals** — Never use `type` after creating or selecting a goal. Use `read_page(filter="interactive")` to find the goal name textbox in the right panel, then `form_input(ref=..., value="Name")`. Typing without a confirmed text input focus will inject characters into the SVG diagram.
 
 14. **Use the lock/unlock workflow for setting multiple importance values** — When setting specific percentages on multiple siblings, set each value and lock it before moving to the next. Unlock all when done. See "Set Importance on Multiple Sibling Goals" above.
+
+15. **Fix shifted UI with `document.body.scrollLeft = 0`** — Goalscape modals (especially the Share dialog) can cause `document.body.scrollLeft` to become stuck at a non-zero value (e.g. 560px), which shifts the entire UI to the left so the diagram and top bar are partially or fully off-screen. This persists even after the modal is closed and survives page reloads. The fix is to run `document.body.scrollLeft = 0` via JavaScript. Always check for this if the UI appears shifted or the top bar is missing.
