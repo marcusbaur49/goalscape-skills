@@ -82,13 +82,16 @@ When you hover over a project name, **5 icon buttons** appear to the right of th
 - **Goalscape logo**: navigates to Home
 - **Home icon** (house): opens Home dialog with project list
 - **Undo/Redo** buttons
-- **Three dots menu** (⋮): project-level settings
+- **Three dots menu** (⋮) in the top-left area: project-level actions:
+  - **Project History**: view the change history of the project
+  - **Download As** → submenu with export formats: Image (PNG), Vector Image (SVG), Excel Sheet (XLSX), Data Values (CSV), Word Document (DOCX), Goalscape Project (GSP)
 - **Focus button** (top-left): shows current focus path, click ">" to drill into selected goal
 - **Navigation arrows** (top-right of diagram area): navigate between sibling goals
-- **Search** (magnifying glass icon)
-- **Theme toggle** (sun/moon icon)
-- **Share** button
-- **User avatar** (initials)
+- **Three dots menu** (⋮) near navigation arrows: opens a context menu for the currently selected goal — same actions as the right-click context menu (Add Goal, Add Subgoal, Rename, Cut, Copy, Paste, Delete, progress shortcuts, Equalize Subgoals, color palette)
+- **Search** (magnifying glass icon): opens an inline search bar. Results appear in a dropdown with two sections: **Goal names** (matches in goal titles) and **Notes** (matches in note content with excerpts). Clicking a result selects that goal.
+- **Theme toggle** (sun/moon icon): switch between dark and light themes
+- **Share** button: opens the Share dialog — add people by email, view people with access and their roles, toggle "Anyone with the link can view", Copy Public link, Copy Embed code
+- **User avatar** (initials): profile dropdown with First/Last name, Email, Settings, Support, Logout
 
 ### Right Panel (Goal Details)
 When a goal is selected, the right panel shows:
@@ -110,12 +113,38 @@ When a goal is selected, the right panel shows:
 1. **Notes & Actions** (text icon): Rich text field for notes, knowledge blocks, checklists. This is where you write detailed content for a goal.
 2. **Comments** (chat icon): Comment thread with formatting (bold, italic, lists, links, images, video). Can notify by email.
 3. **Attachments** (paperclip icon): Attach files to the goal.
-4. **+** (plus icon): Additional options.
+4. **+** (plus icon): Create a **Named Note** — opens a "Name Note" dialog to create an additional named note tab for the goal. Multiple named notes can be added to organize different content.
 
 ### Bottom Panel
-- **Goal List**: Hierarchical list of all goals. Click to select. Shows the tree structure as an indented list. Has filter options (Start: Has Started / Today / This Week, Due: Past Due / Today / This Week).
-- **Gantt**: Timeline view showing goals on a horizontal calendar. Requires due dates to display bars. Has zoom controls.
-- The divider between bottom panel and diagram can be dragged to resize.
+The bottom has two toggleable panels: **Goal List** and **Gantt**. Click their names to expand/collapse. A drag handle between the panels and the diagram allows resizing.
+
+#### Goal List
+Hierarchical tree of all goals with expand/collapse arrows. Click a goal name to select it.
+
+**Filter panel** (above the goal list):
+- **Read-only mode** (default): Shows active filter chips for Start, Due, Persons, Tags
+- **Edit mode** (click "Edit ✏️"): Reveals all filter categories with "+ Add filter" dropdowns. Click "Close Edit ✖" to exit.
+- **Pin mode** (click "Pin 📌"): Keeps the filter panel pinned open
+
+**Filter categories:**
+- **Start**: Has Started, Has Not Started, Yesterday, Today, Tomorrow, This Week, Last Week, Next Week, This Month, Last Month, Next Month, This Quarter, Last Quarter, Next Quarter, Start Before (custom date), Start After (custom date)
+- **Due**: same time-based options as Start, plus Past Due
+- **Progress**: Pending, In Progress, Achieved, 10% or less through 90% or less (in 10% increments)
+- **Persons**: filter by assigned person
+- **Tags**: filter by tag
+
+Each active filter shows as a chip with ✖ to remove.
+
+#### Gantt
+Timeline view with month/year headers.
+
+**Creating Gantt bars**: **Click and drag** horizontally on the timeline next to a goal row to create a date range (start + due date). This is the fastest way to assign dates.
+
+**Modifying bars**: Drag a bar to move its date range. Drag an edge to resize (change start or due date).
+
+**Gantt toolbar**: Goal List button, Show/Hide parent goals toggle, detailed list icon, print icon, copy icon, "Gantt" dropdown (collapses panel)
+
+**Gantt controls** (right side): "Now" button (scroll to current date), Zoom in/out (+/−), three-dots menu with: Zoom slider, Show Now Line toggle, Zoom to fit, Scroll to Now
 
 ## How to Perform Common Actions
 
@@ -226,9 +255,26 @@ To navigate **back up** (only possible when you have previously drilled into a s
 - Use the Goal List to jump to any goal
 - Click parent breadcrumb in the right panel to go up
 
+### Right-Click Context Menu (Full Reference)
+Right-clicking a goal segment shows:
+1. **Add Goal** (⌘ ⇧ ↵) — add sibling
+2. **Add Subgoal** (⌘ ↵) — add child
+3. **Rename Goal** (T ↵)
+4. **Cut Goal** (⌘ X)
+5. **Copy Goal** (⌘ C)
+6. **Paste Goal** (⌘ ⇧ V) — paste as sibling
+7. **Paste as Subgoal** (⌘ V) — paste as child
+8. **Delete Goal** (⌘ ←)
+9. **Zero Progress** — set to 0% (greyed if already zero)
+10. **Complete Progress** — set to 100%
+11. **Equalize Subgoals** — set all children to equal importance
+12. **Center on this Goal** (⌘ ⇧ ↓) — drill in, making it the diagram center
+13. **Color palette** — two rows of color swatches (red, yellow, green, blue, purple, orange, grey, teal, pink, light blue)
+14. **Apply to Subgoals** — applies selected color recursively to all subgoals
+
 ### Delete a Goal
 1. Right-click → "Delete Goal"
-2. Keyboard: **⌘ →** - (minus)
+2. Keyboard: **⌘ ←** (backspace)
 3. Be careful: this deletes the goal and all its subgoals
 
 ### Cut / Copy / Paste Goals
